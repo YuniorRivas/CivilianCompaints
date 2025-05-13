@@ -110,7 +110,7 @@ function renderTreeMap() {
     .padding(2)(root);
 
   const colorScale = d3.scaleOrdinal()
-    .domain(data.map(d => d.name))
+    .domain(data.map(d => d.name)) is
     .range([
       'rgba(255,154,0,1)', 'rgba(255,154,0,0.9)',
       'rgba(255,154,0,0.8)', 'rgba(255,154,0,0.7)',
@@ -132,7 +132,7 @@ function renderTreeMap() {
 
   nodes.append("text")
     .attr("x", d => (d.x1 - d.x0) / 2)
-    .attr("y", d => (d.y1 - d.y0) / 2)
+    .attr("y", d => (d.y1 - d.y0) / 2 - 10)
     .attr("text-anchor", "middle")
     .attr("fill", "#000")
     .style("font-size", "12px")
@@ -141,9 +141,9 @@ function renderTreeMap() {
     .enter()
     .append("tspan")
     .attr("x", d => 0)
-    .attr("dy", (d, i) => `${i * 15}px`)
+    .attr("dy", (d, i) => `${i * 14}px`)
+    .attr("text-anchor", "middle")
     .text(d => d);
-}
 
 // Utility function: debounce
 function debounce(func, wait) {
