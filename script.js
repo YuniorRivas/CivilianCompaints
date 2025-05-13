@@ -124,6 +124,31 @@ function renderTreeMap() {
     .attr("class", "cell")
     .attr("transform", d => `translate(${d.x0},${d.y0})`);
 
+  nodes.each(function(d) {
+    const g = d3.select(this);
+    const rectWidth = d.x1 - d.x0;
+    const rectHeight = d.y1 - d.y0;
+    const lines = d.data.name.split("|");
+    const lineHeight = 14;
+    const totalTextHeight = lines.length * lineHeight;
+    const startY = (rectHeight - totalTextHeight) / 2 + lineHeight;
+
+    g.append("text")
+        .attr("x", rectWidth / 2)
+        .attr("y", startY)
+        .attr("text-anchor", "middle")
+        .attr("fill", "#000")
+        .style("font-size", "12px")
+        .selectAll("tspan")
+        .data(lines)
+        .enter()
+        .append("tspan")
+        .attr("x", rectWidth / 2)
+        .attr("dy", (_, i) => i === 0 ? 0 : lineHeight)
+        .text(line => line);
+    
+});
+  
   nodes.append("rect")
     .attr("width", d => d.x1 - d.x0)
     .attr("height", d => d.y1 - d.y0)
