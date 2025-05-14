@@ -1,65 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Civilian Allegations Against NYPD</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilian Allegations Against NYPD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
 </head>
 <body>
-  <header id="header">
-    <h1>Civilian Allegations Against the NYPD Explained</h1>
-    <h2>Over 370,000 civilian conduct allegations reported</h2>
-    <p><a href="https://data.cityofnewyork.us/Public-Safety/Civilian-Complaint-Review-Board-Allegations-Agains/6xgr-kwjq/about_data" target="_blank" rel="noopener">Data from the Civilian Complaint Review Board (As of April 12, 2024)</a></p>
-  </header>
-
-  <main id="Container">
-    <section id="chartsContainer">
-      <p>In New York City, civilian allegations against the police are serious accusations, often reflecting potential police misconduct. These are processed by the Civilian Complaint Review Board (CCRB), an independent agency separate from the NYPD since 1993.</p>
-
-      <div id="pieChartContainer">
-        <canvas id="fadoPieChart" aria-label="FADO Pie Chart" role="img"></canvas>
-      </div>
-
-      <p>An in-depth analysis of CCRB data shows over 370,000 allegations since 2000. These fall into four categories—Force, Abuse of Authority, Discourtesy, and Offensive Language (FADO). More than half involve abuse of authority.</p>
-
-      <div id="treeMapContainer"></div>
-
-      <p>While abuse of authority is most common, excessive or inappropriate use of force makes up 40% of all allegations. This suggests potential systemic issues with use-of-force policies.</p>
-
-      <p>Other frequent issues include improper searches and arrests. Discrimination and the use of slurs or racial profiling also appear. Surprisingly, fewer than 150 allegations involve sexual misconduct—pointing to likely underreporting or undercounting.</p>
-
-      <div id="mapContainer">
-        <iframe 
-          title="Civilian Allegations By Precinct" 
-          src="https://datawrapper.dwcdn.net/Bx5PF/1/" 
-          loading="lazy"
-          frameborder="0"
-          style="border: none;"
-          aria-label="Allegations map by precinct"
-        ></iframe>
-      </div>
-
-      <p>The 75th precinct stands out for high allegation volume and a troubled past, including corruption scandals like those exposed by the 'Mollen Commission' and the documentary "The Seven Five." These trends suggest historical and social dynamics may fuel conflict between police and communities here.</p>
-
-      <p>In summary, these 370,000+ allegations highlight the need for accountability, transparency, and reform. Data like this can inform better policies and help rebuild public trust in law enforcement.</p>
-    </section>
-  </main>
-
-  <footer>
+<div id="header">
+<h1>Civilian Allegations Against the NYPD Explained</h1>
+<h2>New York's Finest has received over 370,000 conduct allegations made by civilians</h2>
+<a href="https://data.cityofnewyork.us/Public-Safety/Civilian-Complaint-Review-Board-Allegations-Agains/6xgr-kwjq/about_data">Data from the Civil Complaint Review Board (As of April 12, 2024)</a>
+</div>
+<div id="Container">
+    <div id="chartsContainer">
+    <p>In New York City, civilian allegations against the police are a serious accusation, reflecting concerns over potential police misconduct. These allegations are distinct from complaints in that they often involve specific accusations of wrongdoing by police officers, and are collected and processed by the Civilian Complaint Review Board (CCRB) - an independent agency separated from the NYPD since 1993.</p>
+        <div id="pieChartContainer">
+            <canvas id="fadoPieChart" width="500" height="500"></canvas>
+        </div>
+<P>An in-depth analysis of the data collected by the CCRB reveals a startling volume of civilian allegations, exceeding 370,000 since the year 2000. These allegations are categorized into four types: excessive or unnecessary force, abuse of authority, discourtesy, and offensive language, each represents the acronym of 'FADO'. Each type signifies a particular kind of potential misconduct, with 'force' indicating physical altercations, 'abuse of authority' relating to the misuse of police powers, 'discourtesy' involving disrespectful behavior, and 'offensive language' referring to the use of slurs or other inappropriate language. More than half of all civilian allegations involve abuse of authority. </P>
+        <div id="treeMapContainer"></div>
+<p>If we look closer in each specific allegation, we notice the prominence of physical force allegations. Although abuse of authority is the most common “FADO Type,” the excessive or inappropriate use of force is by far the biggest allegation made by civilians. Making up 40% of all allegations, it is particularly alarming, pointing to potential systemic issues with use-of-force protocols.</p>
+<p>Additonally, other types allegations are fairly common, including failures by offers to meet standards and guidelines in searches and arrests. Discrimination by police is also present and can include the use of slurs agains a civlians or explicit racial profiling. Another schocking finding in the data is that out of over 370,000 allegations, less than 150 are logged as sexual misconduct. Given the prevalence of sexual misconduct in society, this likely points to an epidemic of underreporting or undercounting. The CCRB has previously made promises to better track sexual misconduct by the NYPD against misconduct.</p>
+        <div id="mapContainer" style="width: 100%; padding-top: 20px; margin-bottom: 20px;">
+            <iframe title="Civilian Allegations By Precinct" aria-label="Map" src="https://datawrapper.dwcdn.net/Bx5PF/1/" scrolling="no" frameborder="0" style="border: none; width: 95%; height: 750px;"></iframe>
+        </div>
+<p>When looking at allegations by precincts, the 75th precinct stands out as a hotspot not only for its sheer volume of allegations but also for its complicated past. Which includes corruption scandals and a history of tense police-community relations. The infamous 'Mollen Commission' report exposing police corruption, may partly explain the high volume of allegations here. The notorious and troubled history of the 75th precinct was presented in the documentary film "The Seven Five." This prevalent concentration suggest broader socio-economic and historical factors that exacerbate conflicts between the police and the community in this region of New York City</p>
+<p>In sum, the over 370,000 allegations against the NYPD since 2000 serve as a reminder of the ongoing challenges in policing America's largest city. It underscores the importance of accountability, the necessity of effective oversight, and the need for a continuous dialogue on the balance between authority and civil liberties. As New York continues to grapple with these issues, the hope is that data like this can lead to reforms, restore trust, and ensure that the motto "to protect and serve" holds its true value.</p>
+    </div>
+</div>
+    <script src="script.js"></script>
+<footer>
     © 2024 Yunior Rivas Garcia
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      renderPieChart();
-      renderTreeMap();
-    });
-  </script>
-  <script src="script.js"></script>
+</footer>
 </body>
 </html>
